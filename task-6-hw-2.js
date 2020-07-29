@@ -1,15 +1,21 @@
 'use strict'
 
-let input;
-const numbers = [];
 let total = 0;
-input = prompt('Введите число');
-while (input !== null) {
-    numbers.push(Number.parseInt(input));
+let input;
+let numbers = [];
+
+do {
     input = prompt('Введите число');
-};
-console.log(numbers);
-for (let number of numbers) {
-    total += number;
-};
-alert(`Общая сумма чисел равна ${total}`);
+    if (input === "") {
+        continue;
+    } else {numbers.push(+input);
+    }
+}   while (input !== null);
+
+if (numbers.length !== 0) {
+    for (let number of numbers) {
+        total += number;
+    }
+}
+console.log(`Общая сумма чисел равна ${total}`);
+
