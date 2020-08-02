@@ -1,9 +1,8 @@
 'use strict'
 
 let formatString = function (string) {
-  string.length <= 40
-  ? console.log(string)
-  : console.log(`${string.slice(0, 40)}...`);
+  string.length <= 40 ? string : (string = `${string.slice(0, 40)}...`);
+  return string;
 };
 
 console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
